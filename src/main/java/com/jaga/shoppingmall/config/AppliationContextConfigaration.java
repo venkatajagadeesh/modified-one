@@ -10,15 +10,16 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
-import org.springframework.orm.hibernate4.HibernateTransactionManager;
-import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
+import org.springframework.orm.hibernate5.HibernateTransactionManager;
+import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.jaga.shoppingmall.model.Category;
+import com.jaga.shoppingmall.model.Product;
 import com.jaga.shoppingmall.model.Suppiler;
 
 @Configuration
-@ComponentScan("com.niit.shoppingcart")
+@ComponentScan("com.jaga.shoppingmall")
 @EnableTransactionManagement
 
 public class AppliationContextConfigaration {
@@ -26,8 +27,8 @@ public class AppliationContextConfigaration {
 	@Bean(name = "dataSource")
 	public DataSource getDataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
-		dataSource.setDriverClassName("org.h2.Drive");
-		dataSource.setUrl("jdhc:h2:tcp://localhost/~/niitdb");
+		dataSource.setDriverClassName("org.h2.Driver");
+		dataSource.setUrl("jdbc:h2:tcp://localhost/~/niitdb");
 
 		dataSource.setUsername("sa");
 		dataSource.setPassword("sa");
@@ -49,6 +50,7 @@ public class AppliationContextConfigaration {
 		sessionBuilder.addProperties(getHibernateProperties());
 		sessionBuilder.addAnnotatedClass(Category.class);
 		sessionBuilder.addAnnotatedClass(Suppiler.class);
+		sessionBuilder.addAnnotatedClass(Product.class);
 		return sessionBuilder.buildSessionFactory();
 	}
 

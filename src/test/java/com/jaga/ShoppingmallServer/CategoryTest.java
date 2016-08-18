@@ -5,7 +5,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import com.jaga.shoppingmall.dao.CategoryDAO;
 import com.jaga.shoppingmall.model.Category;
 
-public class CategortTest {
+public class CategoryTest {
 
 	public static void main(String[] args) {
 		

@@ -55,7 +55,7 @@ public class SuppilerDAOImpl implements SuppilerDAO {
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public  Suppiler get(String id){
 		
-		String hql = "from Supplier where id= "+ "'"+ id+"'" ;
+		String hql = "from Suppiler where id= "+ "'"+ id+"'" ;
 		Query query=sessionFactory.getCurrentSession().createQuery(hql);
 		List<Suppiler>list= query.list();
 		

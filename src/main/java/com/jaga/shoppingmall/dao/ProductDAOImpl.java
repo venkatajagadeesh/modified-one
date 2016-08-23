@@ -1,8 +1,6 @@
 package com.jaga.shoppingmall.dao;
 
 import java.util.List;
-
-
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
@@ -21,6 +19,8 @@ public class ProductDAOImpl implements ProductDAO {
 	public ProductDAOImpl(SessionFactory sessionFactory) {
 		this.sessionFactory=sessionFactory;
 	}
+	
+
 	@Transactional
 	public boolean save(Product product){
 		try {

@@ -17,6 +17,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import com.jaga.shoppingmall.model.Category;
 import com.jaga.shoppingmall.model.Product;
 import com.jaga.shoppingmall.model.Suppiler;
+import com.jaga.shoppingmall.model.UserDetails;
 
 @Configuration
 @ComponentScan("com.jaga.shoppingmall")
@@ -51,6 +52,8 @@ public class AppliationContextConfigaration {
 		sessionBuilder.addAnnotatedClass(Category.class);
 		sessionBuilder.addAnnotatedClass(Suppiler.class);
 		sessionBuilder.addAnnotatedClass(Product.class);
+		sessionBuilder.addAnnotatedClass(UserDetails.class);
+
 		return sessionBuilder.buildSessionFactory();
 	}
 

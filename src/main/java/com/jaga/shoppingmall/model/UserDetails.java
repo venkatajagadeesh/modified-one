@@ -17,7 +17,7 @@ public class UserDetails {
 	private String password;
 	private String mail;
 	private String contact;
-	private String address;
+	private String adders;
 	public String getId() {
 		return id;
 	}
@@ -48,11 +48,11 @@ public class UserDetails {
 	public void setContact(String contact) {
 		this.contact = contact;
 	}
-	public String getAddress() {
-		return address;
+	public String getAdders() {
+		return adders;
 	}
-	public void setAddress(String address) {
-		this.address = address;
+	public void setAdders(String adders) {
+		this.adders = adders;
 	}
 
 	
